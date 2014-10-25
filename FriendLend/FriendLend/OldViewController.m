@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Pez Cuckow. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "OldViewController.h"
 
 #import "ESTBeaconManager.h"
 
-@interface ViewController () <ESTBeaconManagerDelegate>
+@interface OldViewController () <ESTBeaconManagerDelegate>
 
 //@property (nonatomic, strong) ESTBeacon         *beacon;
 @property (nonatomic, strong) ESTBeaconManager  *beaconManager;
