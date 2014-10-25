@@ -10,11 +10,11 @@
 
 #import "ESTBeaconManager.h"
 
-@interface ViewController ()
+@interface ViewController () <ESTBeaconManagerDelegate>
 
 //@property (nonatomic, strong) ESTBeacon         *beacon;
 @property (nonatomic, strong) ESTBeaconManager  *beaconManager;
-//@property (nonatomic, strong) ESTBeaconRegion   *beaconRegion;
+@property (nonatomic, strong) ESTBeaconRegion   *beaconRegion;
 
 @end
 
@@ -38,11 +38,12 @@
     // create manager instance
     self.beaconManager = [[ESTBeaconManager alloc] init];
     self.beaconManager.delegate = self;
-    self.beaconManager.avoidUnknownStateBeacons = YES;
+    //self.beaconManager.avoidUnknownStateBeacons = YES;
     
-    NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"];
-    ESTBeaconRegion* region = [[ESTBeaconRegion alloc] initWithProximityUUID:uuid
-                               identifier:@"com.nsscreencast.beaconfun.region"];
+    
+    //NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"];
+    ESTBeaconRegion* region = [[ESTBeaconRegion alloc] initWithProximityUUID:ESTIMOTE_PROXIMITY_UUID
+                               identifier:@"RegionIdentifier"];
     
     region.notifyOnEntry = true;
     region.notifyOnExit = true;
