@@ -12,9 +12,9 @@
 
 @interface ViewController ()
 
-@property (nonatomic, strong) ESTBeacon         *beacon;
+//@property (nonatomic, strong) ESTBeacon         *beacon;
 @property (nonatomic, strong) ESTBeaconManager  *beaconManager;
-@property (nonatomic, strong) ESTBeaconRegion   *beaconRegion;
+//@property (nonatomic, strong) ESTBeaconRegion   *beaconRegion;
 
 @end
 
@@ -23,6 +23,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+
+    /*
+     * Persmission to show Local Notification.
+     */
+    UIApplication *application = [UIApplication sharedApplication];
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    }
     
     /////////////////////////////////////////////////////////////
     // setup Estimote beacon manager
