@@ -46,6 +46,11 @@
                                                                        major:65164
                                identifier:@"RegionIdentifier"];
     
+    [self.beaconManager startAdvertisingWithProximityUUID:ESTIMOTE_IOSBEACON_PROXIMITY_UUID
+                                                    major:1337
+                                                    minor:1
+                                               identifier:@"RegionIdentifier"];
+    
     region.notifyOnEntry = true;
     region.notifyOnExit = true;
     
