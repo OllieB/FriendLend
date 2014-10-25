@@ -20,7 +20,7 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>038541CA91AF3CE577671EDF09E9D07C7D33C3F2</key>
-		<string>..FriendLend/</string>
+		<string>..FriendLend</string>
 		<key>8B36130B6D9547DBF39B786213151F46238431CA</key>
 		<string>..</string>
 	</dict>
@@ -46,7 +46,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>038541CA91AF3CE577671EDF09E9D07C7D33C3F2</string>
 			<key>IDESourceControlWCCName</key>
-			<string>FriendLend</string>
+			<string>FriendLendFriendLend</string>
 		</dict>
 	</array>
 </dict>
