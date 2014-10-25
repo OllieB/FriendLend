@@ -13,6 +13,17 @@
 		0719D1A019FBCD0900CB2106 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0719D19F19FBCD0900CB2106 /* Images.xcassets */; };
 		0719D1A319FBCD0900CB2106 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0719D1A119FBCD0900CB2106 /* LaunchScreen.xib */; };
 		0719D1AF19FBCD0A00CB2106 /* FriendLendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0719D1AE19FBCD0A00CB2106 /* FriendLendTests.swift */; };
+		07B0CBB519FBD6F300497986 /* libEstimoteSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B0CBA419FBD6F300497986 /* libEstimoteSDK.a */; };
+		07B0CBB619FBD6F300497986 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 07B0CBA619FBD6F300497986 /* .gitignore */; };
+		07B0CBB719FBD6F300497986 /* HTTPRequestSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0CBA719FBD6F300497986 /* HTTPRequestSerializer.swift */; };
+		07B0CBB819FBD6F300497986 /* HTTPResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0CBA819FBD6F300497986 /* HTTPResponseSerializer.swift */; };
+		07B0CBB919FBD6F300497986 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0CBA919FBD6F300497986 /* HTTPTask.swift */; };
+		07B0CBBA19FBD6F300497986 /* HTTPUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0CBAA19FBD6F300497986 /* HTTPUpload.swift */; };
+		07B0CBBB19FBD6F300497986 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07B0CBAB19FBD6F300497986 /* Info.plist */; };
+		07B0CBBC19FBD6F300497986 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 07B0CBAC19FBD6F300497986 /* LICENSE */; };
+		07B0CBBD19FBD6F300497986 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 07B0CBAD19FBD6F300497986 /* README.md */; };
+		07B0CBBE19FBD6F300497986 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07B0CBB319FBD6F300497986 /* Info.plist */; };
+		07B0CBBF19FBD6F300497986 /* SwiftHTTPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0CBB419FBD6F300497986 /* SwiftHTTPTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,6 +33,34 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0719D19219FBCD0900CB2106;
 			remoteInfo = FriendLend;
+		};
+		07B0CBC419FBD6F300497986 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07B0CBAF19FBD6F300497986 /* SwiftHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6BFD901619C8D8B500DD99B6;
+			remoteInfo = SwiftHTTP;
+		};
+		07B0CBC619FBD6F300497986 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07B0CBAF19FBD6F300497986 /* SwiftHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6BFD902119C8D8B500DD99B6;
+			remoteInfo = SwiftHTTPTests;
+		};
+		07B0CBC819FBD6F300497986 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07B0CBAF19FBD6F300497986 /* SwiftHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D958025919E6EEEB003C8218;
+			remoteInfo = SwiftHTTPOSX;
+		};
+		07B0CBCA19FBD6F300497986 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07B0CBAF19FBD6F300497986 /* SwiftHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D958026319E6EEEB003C8218;
+			remoteInfo = SwiftHTTPOSXTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -36,6 +75,26 @@
 		0719D1A819FBCD0900CB2106 /* FriendLendTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FriendLendTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0719D1AD19FBCD0A00CB2106 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0719D1AE19FBCD0A00CB2106 /* FriendLendTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendLendTests.swift; sourceTree = "<group>"; };
+		07B0CB9D19FBD6F300497986 /* ESTBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeacon.h; sourceTree = "<group>"; };
+		07B0CB9E19FBD6F300497986 /* ESTBeaconDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconDefinitions.h; sourceTree = "<group>"; };
+		07B0CB9F19FBD6F300497986 /* ESTBeaconFirmwareInfoVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconFirmwareInfoVO.h; sourceTree = "<group>"; };
+		07B0CBA019FBD6F300497986 /* ESTBeaconFirmwareVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconFirmwareVO.h; sourceTree = "<group>"; };
+		07B0CBA119FBD6F300497986 /* ESTBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconManager.h; sourceTree = "<group>"; };
+		07B0CBA219FBD6F300497986 /* ESTBeaconRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconRegion.h; sourceTree = "<group>"; };
+		07B0CBA319FBD6F300497986 /* ESTBeaconVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconVO.h; sourceTree = "<group>"; };
+		07B0CBA419FBD6F300497986 /* libEstimoteSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEstimoteSDK.a; sourceTree = "<group>"; };
+		07B0CBA619FBD6F300497986 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		07B0CBA719FBD6F300497986 /* HTTPRequestSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestSerializer.swift; sourceTree = "<group>"; };
+		07B0CBA819FBD6F300497986 /* HTTPResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPResponseSerializer.swift; sourceTree = "<group>"; };
+		07B0CBA919FBD6F300497986 /* HTTPTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		07B0CBAA19FBD6F300497986 /* HTTPUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPUpload.swift; sourceTree = "<group>"; };
+		07B0CBAB19FBD6F300497986 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07B0CBAC19FBD6F300497986 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		07B0CBAD19FBD6F300497986 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		07B0CBAE19FBD6F300497986 /* SwiftHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftHTTP.h; sourceTree = "<group>"; };
+		07B0CBAF19FBD6F300497986 /* SwiftHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SwiftHTTP.xcodeproj; sourceTree = "<group>"; };
+		07B0CBB319FBD6F300497986 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07B0CBB419FBD6F300497986 /* SwiftHTTPTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftHTTPTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B0CBB519FBD6F300497986 /* libEstimoteSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +137,8 @@
 		0719D19519FBCD0900CB2106 /* FriendLend */ = {
 			isa = PBXGroup;
 			children = (
+				07B0CB9B19FBD6F300497986 /* EstimoteSDK */,
+				07B0CBA519FBD6F300497986 /* SwiftHTTP-master */,
 				0719D19819FBCD0900CB2106 /* AppDelegate.swift */,
 				0719D19A19FBCD0900CB2106 /* ViewController.swift */,
 				0719D19C19FBCD0900CB2106 /* Main.storyboard */,
@@ -110,6 +172,67 @@
 				0719D1AD19FBCD0A00CB2106 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07B0CB9B19FBD6F300497986 /* EstimoteSDK */ = {
+			isa = PBXGroup;
+			children = (
+				07B0CB9C19FBD6F300497986 /* Headers */,
+				07B0CBA419FBD6F300497986 /* libEstimoteSDK.a */,
+			);
+			path = EstimoteSDK;
+			sourceTree = "<group>";
+		};
+		07B0CB9C19FBD6F300497986 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				07B0CB9D19FBD6F300497986 /* ESTBeacon.h */,
+				07B0CB9E19FBD6F300497986 /* ESTBeaconDefinitions.h */,
+				07B0CB9F19FBD6F300497986 /* ESTBeaconFirmwareInfoVO.h */,
+				07B0CBA019FBD6F300497986 /* ESTBeaconFirmwareVO.h */,
+				07B0CBA119FBD6F300497986 /* ESTBeaconManager.h */,
+				07B0CBA219FBD6F300497986 /* ESTBeaconRegion.h */,
+				07B0CBA319FBD6F300497986 /* ESTBeaconVO.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		07B0CBA519FBD6F300497986 /* SwiftHTTP-master */ = {
+			isa = PBXGroup;
+			children = (
+				07B0CBA619FBD6F300497986 /* .gitignore */,
+				07B0CBA719FBD6F300497986 /* HTTPRequestSerializer.swift */,
+				07B0CBA819FBD6F300497986 /* HTTPResponseSerializer.swift */,
+				07B0CBA919FBD6F300497986 /* HTTPTask.swift */,
+				07B0CBAA19FBD6F300497986 /* HTTPUpload.swift */,
+				07B0CBAB19FBD6F300497986 /* Info.plist */,
+				07B0CBAC19FBD6F300497986 /* LICENSE */,
+				07B0CBAD19FBD6F300497986 /* README.md */,
+				07B0CBAE19FBD6F300497986 /* SwiftHTTP.h */,
+				07B0CBAF19FBD6F300497986 /* SwiftHTTP.xcodeproj */,
+				07B0CBB219FBD6F300497986 /* Tests */,
+			);
+			path = "SwiftHTTP-master";
+			sourceTree = "<group>";
+		};
+		07B0CBB019FBD6F300497986 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07B0CBC519FBD6F300497986 /* SwiftHTTP.framework */,
+				07B0CBC719FBD6F300497986 /* SwiftHTTPTests.xctest */,
+				07B0CBC919FBD6F300497986 /* SwiftHTTPOSX.framework */,
+				07B0CBCB19FBD6F300497986 /* SwiftHTTPOSXTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		07B0CBB219FBD6F300497986 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				07B0CBB319FBD6F300497986 /* Info.plist */,
+				07B0CBB419FBD6F300497986 /* SwiftHTTPTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +284,7 @@
 				TargetAttributes = {
 					0719D19219FBCD0900CB2106 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = SU974CA7YN;
 					};
 					0719D1A719FBCD0900CB2106 = {
 						CreatedOnToolsVersion = 6.1;
@@ -179,6 +303,12 @@
 			mainGroup = 0719D18A19FBCD0900CB2106;
 			productRefGroup = 0719D19419FBCD0900CB2106 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 07B0CBB019FBD6F300497986 /* Products */;
+					ProjectRef = 07B0CBAF19FBD6F300497986 /* SwiftHTTP.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				0719D19219FBCD0900CB2106 /* FriendLend */,
@@ -187,14 +317,49 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		07B0CBC519FBD6F300497986 /* SwiftHTTP.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftHTTP.framework;
+			remoteRef = 07B0CBC419FBD6F300497986 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		07B0CBC719FBD6F300497986 /* SwiftHTTPTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftHTTPTests.xctest;
+			remoteRef = 07B0CBC619FBD6F300497986 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		07B0CBC919FBD6F300497986 /* SwiftHTTPOSX.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftHTTPOSX.framework;
+			remoteRef = 07B0CBC819FBD6F300497986 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		07B0CBCB19FBD6F300497986 /* SwiftHTTPOSXTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftHTTPOSXTests.xctest;
+			remoteRef = 07B0CBCA19FBD6F300497986 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		0719D19119FBCD0900CB2106 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B0CBBC19FBD6F300497986 /* LICENSE in Resources */,
+				07B0CBB619FBD6F300497986 /* .gitignore in Resources */,
 				0719D19E19FBCD0900CB2106 /* Main.storyboard in Resources */,
 				0719D1A319FBCD0900CB2106 /* LaunchScreen.xib in Resources */,
+				07B0CBBB19FBD6F300497986 /* Info.plist in Resources */,
 				0719D1A019FBCD0900CB2106 /* Images.xcassets in Resources */,
+				07B0CBBE19FBD6F300497986 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +377,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B0CBB819FBD6F300497986 /* HTTPResponseSerializer.swift in Sources */,
+				07B0CBB919FBD6F300497986 /* HTTPTask.swift in Sources */,
+				07B0CBB719FBD6F300497986 /* HTTPRequestSerializer.swift in Sources */,
+				07B0CBBD19FBD6F300497986 /* README.md in Sources */,
 				0719D19B19FBCD0900CB2106 /* ViewController.swift in Sources */,
+				07B0CBBA19FBD6F300497986 /* HTTPUpload.swift in Sources */,
 				0719D19919FBCD0900CB2106 /* AppDelegate.swift in Sources */,
+				07B0CBBF19FBD6F300497986 /* SwiftHTTPTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,9 +509,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FriendLend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FriendLend/EstimoteSDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -348,9 +526,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FriendLend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FriendLend/EstimoteSDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -407,6 +592,7 @@
 				0719D1B419FBCD0A00CB2106 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0719D1B519FBCD0A00CB2106 /* Build configuration list for PBXNativeTarget "FriendLendTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +601,7 @@
 				0719D1B719FBCD0A00CB2106 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
