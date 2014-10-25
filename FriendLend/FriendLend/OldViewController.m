@@ -43,7 +43,7 @@
     
     //NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"];
     ESTBeaconRegion* region = [[ESTBeaconRegion alloc] initWithProximityUUID:ESTIMOTE_IOSBEACON_PROXIMITY_UUID
-                                                                       major:65164
+                                                                       major:1337
                                identifier:@"RegionIdentifier"];
     
     [self.beaconManager startAdvertisingWithProximityUUID:ESTIMOTE_IOSBEACON_PROXIMITY_UUID
@@ -153,10 +153,13 @@
 }
 
 - (void)beaconManager:(ESTBeaconManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(ESTBeaconRegion *)region {
-    for (CLBeacon *beacon in beacons) {
+    for (ESTBeacon *beacon in beacons) {
         NSLog(@"Ranging beacon: %@", beacon.proximityUUID);
         NSLog(@"%@ - %@", beacon.major, beacon.minor);
         NSLog(@"Range: %@", [self stringForProximity:beacon.proximity]);
+        
+        //cell.detailTextLabel.text = [NSString stringWithFormat:@"Distance: %.2f", [beacon.distance floatValue]];
+        NSLog([NSString stringWithFormat:@"Distance: %.2f", [beacon.distance floatValue]]);
         
         [self setColorForProximity:beacon.proximity];
     }
