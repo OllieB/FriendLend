@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UITableViewController
+@interface MainViewController : UITableViewController
     @property (strong, nonatomic)  NSArray *menuItems;
 @end
+
