@@ -101,6 +101,50 @@
     NSLog(@"didDetermineState");
 }
 
+- (void)beaconManager:(ESTBeaconManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(ESTBeaconRegion *)region {
+    for (CLBeacon *beacon in beacons) {
+        NSLog(@"Ranging beacon: %@", beacon.proximityUUID);
+        NSLog(@"%@ - %@", beacon.major, beacon.minor);
+        NSLog(@"Range: %@", [self stringForProximity:beacon.proximity]);
+        
+        [self setColorForProximity:beacon.proximity];
+    }
+}
+
+- (void)setColorForProximity:(CLProximity)proximity {
+    switch (proximity) {
+        case CLProximityUnknown:
+            self.view.backgroundColor = [UIColor whiteColor];
+            break;
+            
+        case CLProximityFar:
+            self.view.backgroundColor = [UIColor yellowColor];
+            break;
+            
+        case CLProximityNear:
+            self.view.backgroundColor = [UIColor orangeColor];
+            break;
+            
+        case CLProximityImmediate:
+            self.view.backgroundColor = [UIColor redColor];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (NSString *)stringForProximity:(CLProximity)proximity {
+    switch (proximity) {
+        case CLProximityUnknown:    return @"Unknown";
+        case CLProximityFar:        return @"Far";
+        case CLProximityNear:       return @"Near";
+        case CLProximityImmediate:  return @"Immediate";
+        default:
+            return nil;
+    }
+}
+
 #pragma mark -
 
 @end
