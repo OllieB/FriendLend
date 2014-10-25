@@ -1,0 +1,1 @@
+PODS_BUOY_OTHER_LDFLAGS = -framework "CoreLocation"

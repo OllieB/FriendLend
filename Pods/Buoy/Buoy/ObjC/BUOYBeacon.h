@@ -1,0 +1,64 @@
+//  The MIT License (MIT)
+//
+//  Copyright (c) 2014 Intermark Interactive
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy of
+//  this software and associated documentation files (the "Software"), to deal in
+//  the Software without restriction, including without limitation the rights to
+//  use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+//  the Software, and to permit persons to whom the Software is furnished to do so,
+//  subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+//  FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+//  COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+//  IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+//  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+#import <Foundation/Foundation.h>
+@import CoreBluetooth;
+@import CoreLocation;
+
+@interface BUOYBeacon : NSObject
+
+#pragma mark - Properties
+@property (nonatomic, strong) NSUUID *proximityUUID;
+@property (nonatomic, strong) NSNumber *major;
+@property (nonatomic, strong) NSNumber *minor;
+@property (nonatomic, strong) NSString *identifier;
+
+#pragma mark - Singleton
+/**
+ *  Creates a singleton object for the current device so that the device can monitor itself as an iBeacon.
+ *
+ *  @return BUOYDevice
+ */
++ (instancetype)deviceBeacon;
+
+#pragma mark - Create Beacon
+/**
+ *  Sets the beacon information to be transmitted. Each field is optional - the resulting beacon will use [NSUUID UUID] for the proximity UUID, @1 for major, @1 minor, and "kBUOYDeviceBeaconIdentifier" for the identifier.
+ *
+ *  @param uuid       NSUUID
+ *  @param major      NSNumber
+ *  @param minor      NSNumber
+ *  @param identifier NSString
+ */
+- (void)setWithProximityUUID:(NSUUID *)uuid major:(NSNumber *)major minor:(NSNumber *)minor identifier:(NSString *)identifier;
+
+#pragma mark - Transmitting
+/**
+ *  Starts transmitting. Must call setWithProximityUUID:major:minor:identifier before this method will work.
+ */
+- (void)startTransmitting;
+
+/**
+ *  Stops transmitting.
+ */
+- (void)stopTransmitting;
+
+@end
