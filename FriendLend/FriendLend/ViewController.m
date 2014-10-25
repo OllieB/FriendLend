@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-
+    
     /*
      * Persmission to show Local Notification.
      */
@@ -55,6 +55,50 @@
     [self.beaconManager requestStateForRegion:region];
     
     NSLog(@"Looking for beacon!");
+    
+    if ([ESTBeaconManager authorizationStatus] == kCLAuthorizationStatusNotDetermined)
+    {
+        if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_7_1) {
+            /*
+             * No need to explicitly request permission in iOS < 8, will happen automatically when starting ranging.
+             */
+            [self.beaconManager startRangingBeaconsInRegion:region];
+        } else {
+            /*
+             * Request permission to use Location Services. (new in iOS 8)
+             * We ask for "always" authorization so that the Notification Demo can benefit as well.
+             * Also requires NSLocationAlwaysUsageDescription in Info.plist file.
+             *
+             * For more details about the new Location Services authorization model refer to:
+             * https://community.estimote.com/hc/en-us/articles/203393036-Estimote-SDK-and-iOS-8-Location-Services
+             */
+            [self.beaconManager requestAlwaysAuthorization];
+        }
+    }
+    else if([ESTBeaconManager authorizationStatus] == kCLAuthorizationStatusAuthorized)
+    {
+        [self.beaconManager startRangingBeaconsInRegion:region];
+    }
+    else if([ESTBeaconManager authorizationStatus] == kCLAuthorizationStatusDenied)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Access Denied"
+                                                        message:@"You have denied access to location services. Change this in app settings."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles: nil];
+        
+        [alert show];
+    }
+    else if([ESTBeaconManager authorizationStatus] == kCLAuthorizationStatusRestricted)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Not Available"
+                                                        message:@"You have no access to location services."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles: nil];
+        
+        [alert show];
+    }
     
     /////////////////////////////////////////////////////////////
     // setup view
