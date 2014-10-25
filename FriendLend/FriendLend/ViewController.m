@@ -8,25 +8,6 @@
 
 #import "ViewController.h"
 
-@interface ESTDemoTableViewCell : UITableViewCell
-
-@end
-
-@implementation ESTDemoTableViewCell
-
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
-    if (self)
-    {
-        
-    }
-    
-    return self;
-}
-
-@end
-
 @implementation ViewController
 
 - (void)loadView {
@@ -42,7 +23,6 @@
     self.title = @"FriendLend";
     
     self.tableView.sectionHeaderHeight = 20;
-    [self.tableView registerClass:[ESTDemoTableViewCell class] forCellReuseIdentifier:@"DemoCellIdentifier"];
     
     self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
     self.navigationController.navigationBar.tintColor = [UIColor grayColor];
@@ -73,9 +53,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ESTDemoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DemoCellIdentifier" forIndexPath:indexPath];
-    cell.textLabel.text = [[self.menuItems objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    static NSString *simpleTableIdentifier = @"PezCell";
     
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    cell.textLabel.text = [[self.menuItems objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     return cell;
 }
 

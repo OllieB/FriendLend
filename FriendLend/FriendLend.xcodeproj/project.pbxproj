@@ -20,6 +20,7 @@
 		4B8BCC9D19FC38AF00ED74C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8BCC9C19FC38AF00ED74C3 /* UIKit.framework */; };
 		4B8BCC9F19FC38B400ED74C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8BCC9E19FC38B400ED74C3 /* Foundation.framework */; };
 		4B8BCCA119FC525A00ED74C3 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8BCCA019FC525A00ED74C3 /* MainViewController.m */; };
+		4BDF234919FC6F05001CBE11 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF234819FC6F05001CBE11 /* ListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		4B8BCC9E19FC38B400ED74C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4B8BCCA019FC525A00ED74C3 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		4B8BCCA219FC528400ED74C3 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		4BDF234719FC6F05001CBE11 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		4BDF234819FC6F05001CBE11 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,8 @@
 				4B89496D19FC32610095FE04 /* Supporting Files */,
 				4B8BCCA019FC525A00ED74C3 /* MainViewController.m */,
 				4B8BCCA219FC528400ED74C3 /* MainViewController.h */,
+				4BDF234719FC6F05001CBE11 /* ListViewController.h */,
+				4BDF234819FC6F05001CBE11 /* ListViewController.m */,
 			);
 			path = FriendLend;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BDF234919FC6F05001CBE11 /* ListViewController.m in Sources */,
 				4B89497619FC32610095FE04 /* ViewController.m in Sources */,
 				4B8BCCA119FC525A00ED74C3 /* MainViewController.m in Sources */,
 				4B89497319FC32610095FE04 /* AppDelegate.m in Sources */,
