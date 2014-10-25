@@ -53,6 +53,8 @@
     [self.beaconManager startMonitoringForRegion:region];
     [self.beaconManager requestStateForRegion:region];
     
+    NSLog(@"Looking for beacon!");
+    
     /////////////////////////////////////////////////////////////
     // setup view
     
@@ -75,6 +77,8 @@
     UILocalNotification *notification = [UILocalNotification new];
     notification.alertBody = @"Enter region notification";
     
+    NSLog(@"Enter region");
+    
     [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
 }
 
@@ -82,6 +86,8 @@
 {
     UILocalNotification *notification = [UILocalNotification new];
     notification.alertBody = @"Exit region notification";
+    
+    NSLog(@"Leave region");
     
     [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
 }
@@ -91,6 +97,8 @@
         ESTBeaconRegion *beaconRegion = (ESTBeaconRegion *)region;
         [self.beaconManager startRangingBeaconsInRegion:beaconRegion];
     }
+    
+    NSLog(@"didDetermineState");
 }
 
 #pragma mark -
