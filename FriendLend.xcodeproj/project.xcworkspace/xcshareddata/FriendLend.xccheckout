@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BC359839-971C-4958-B69B-431F66A033F0</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FriendLend</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>038541CA91AF3CE577671EDF09E9D07C7D33C3F2</key>
+		<string>https://github.com/OllieB/FriendLend.git</string>
+		<key>8B36130B6D9547DBF39B786213151F46238431CA</key>
+		<string>https://github.com/OllieB/FriendLend.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FriendLend.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>038541CA91AF3CE577671EDF09E9D07C7D33C3F2</key>
+		<string>../..FriendLend/</string>
+		<key>8B36130B6D9547DBF39B786213151F46238431CA</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/OllieB/FriendLend.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8B36130B6D9547DBF39B786213151F46238431CA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8B36130B6D9547DBF39B786213151F46238431CA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FriendLend</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>038541CA91AF3CE577671EDF09E9D07C7D33C3F2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FriendLend</string>
+		</dict>
+	</array>
+</dict>
+</plist>
