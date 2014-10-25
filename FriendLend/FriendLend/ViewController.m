@@ -51,7 +51,6 @@
     // when beacon ranged beaconManager:didEnterRegion:
     // and beaconManager:didExitRegion: invoked
     [self.beaconManager startMonitoringForRegion:region];
-    
     [self.beaconManager requestStateForRegion:region];
     
     /////////////////////////////////////////////////////////////
@@ -85,6 +84,13 @@
     notification.alertBody = @"Exit region notification";
     
     [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+}
+
+- (void)beaconManager:(ESTBeaconManager *)manager didDetermineState:(CLRegionState)state forRegion:(ESTBeaconRegion *)region {
+    if (state == CLRegionStateInside) {
+        ESTBeaconRegion *beaconRegion = (ESTBeaconRegion *)region;
+        [self.beaconManager startRangingBeaconsInRegion:beaconRegion];
+    }
 }
 
 #pragma mark -
