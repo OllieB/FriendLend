@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		074DA89519FC338900CD2A51 /* libEstimoteSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 074DA89419FC338900CD2A51 /* libEstimoteSDK.a */; };
 		4B89497019FC32610095FE04 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B89496F19FC32610095FE04 /* main.m */; };
 		4B89497319FC32610095FE04 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B89497219FC32610095FE04 /* AppDelegate.m */; };
 		4B89497619FC32610095FE04 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B89497519FC32610095FE04 /* ViewController.m */; };
@@ -27,6 +28,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		074DA88D19FC338900CD2A51 /* ESTBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeacon.h; sourceTree = "<group>"; };
+		074DA88E19FC338900CD2A51 /* ESTBeaconDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconDefinitions.h; sourceTree = "<group>"; };
+		074DA88F19FC338900CD2A51 /* ESTBeaconFirmwareInfoVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconFirmwareInfoVO.h; sourceTree = "<group>"; };
+		074DA89019FC338900CD2A51 /* ESTBeaconFirmwareVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconFirmwareVO.h; sourceTree = "<group>"; };
+		074DA89119FC338900CD2A51 /* ESTBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconManager.h; sourceTree = "<group>"; };
+		074DA89219FC338900CD2A51 /* ESTBeaconRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconRegion.h; sourceTree = "<group>"; };
+		074DA89319FC338900CD2A51 /* ESTBeaconVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTBeaconVO.h; sourceTree = "<group>"; };
+		074DA89419FC338900CD2A51 /* libEstimoteSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEstimoteSDK.a; sourceTree = "<group>"; };
 		4B89496A19FC32610095FE04 /* FriendLend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendLend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B89496E19FC32610095FE04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B89496F19FC32610095FE04 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -47,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				074DA89519FC338900CD2A51 /* libEstimoteSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +70,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		074DA88B19FC338900CD2A51 /* EstimoteSDK */ = {
+			isa = PBXGroup;
+			children = (
+				074DA88C19FC338900CD2A51 /* Headers */,
+				074DA89419FC338900CD2A51 /* libEstimoteSDK.a */,
+			);
+			path = EstimoteSDK;
+			sourceTree = "<group>";
+		};
+		074DA88C19FC338900CD2A51 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				074DA88D19FC338900CD2A51 /* ESTBeacon.h */,
+				074DA88E19FC338900CD2A51 /* ESTBeaconDefinitions.h */,
+				074DA88F19FC338900CD2A51 /* ESTBeaconFirmwareInfoVO.h */,
+				074DA89019FC338900CD2A51 /* ESTBeaconFirmwareVO.h */,
+				074DA89119FC338900CD2A51 /* ESTBeaconManager.h */,
+				074DA89219FC338900CD2A51 /* ESTBeaconRegion.h */,
+				074DA89319FC338900CD2A51 /* ESTBeaconVO.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
 		4B89496119FC32610095FE04 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +114,7 @@
 		4B89496C19FC32610095FE04 /* FriendLend */ = {
 			isa = PBXGroup;
 			children = (
+				074DA88B19FC338900CD2A51 /* EstimoteSDK */,
 				4B89497119FC32610095FE04 /* AppDelegate.h */,
 				4B89497219FC32610095FE04 /* AppDelegate.m */,
 				4B89497419FC32610095FE04 /* ViewController.h */,
@@ -347,6 +381,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FriendLend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FriendLend/EstimoteSDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -357,6 +395,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FriendLend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FriendLend/EstimoteSDK",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -414,6 +456,7 @@
 				4B89498F19FC32610095FE04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B89499019FC32610095FE04 /* Build configuration list for PBXNativeTarget "FriendLendTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +465,7 @@
 				4B89499219FC32610095FE04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
