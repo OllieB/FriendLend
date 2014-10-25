@@ -33,11 +33,11 @@
     self.beaconManager.avoidUnknownStateBeacons = YES;
     
     NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"];
-    ESTBeaconRegion* region = [[ESTBeaconRegion alloc] initWithProximityUUID:uuid];
+    ESTBeaconRegion* region = [[ESTBeaconRegion alloc] initWithProximityUUID:uuid
+                               identifier:@"com.nsscreencast.beaconfun.region"];
     
-    
-    //self.beaconRegion.notifyOnEntry = self.enterRegionSwitch.isOn;
-    //self.beaconRegion.notifyOnExit = self.exitRegionSwitch.isOn;
+    region.notifyOnEntry = true;
+    region.notifyOnExit = true;
     
     // start looking for estimote beacons in region
     // when beacon ranged beaconManager:didEnterRegion:
@@ -60,5 +60,25 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - ESTBeaconManager delegate
+
+- (void)beaconManager:(ESTBeaconManager *)manager didEnterRegion:(ESTBeaconRegion *)region
+{
+    UILocalNotification *notification = [UILocalNotification new];
+    notification.alertBody = @"Enter region notification";
+    
+    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+}
+
+- (void)beaconManager:(ESTBeaconManager *)manager didExitRegion:(ESTBeaconRegion *)region
+{
+    UILocalNotification *notification = [UILocalNotification new];
+    notification.alertBody = @"Exit region notification";
+    
+    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+}
+
+#pragma mark -
 
 @end

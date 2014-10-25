@@ -15,6 +15,10 @@
 		4B89497B19FC32610095FE04 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B89497A19FC32610095FE04 /* Images.xcassets */; };
 		4B89497E19FC32610095FE04 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B89497C19FC32610095FE04 /* LaunchScreen.xib */; };
 		4B89498A19FC32610095FE04 /* FriendLendTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B89498919FC32610095FE04 /* FriendLendTests.m */; };
+		4B8BCC9919FC38A300ED74C3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8BCC9819FC38A300ED74C3 /* SystemConfiguration.framework */; };
+		4B8BCC9B19FC38A900ED74C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8BCC9A19FC38A900ED74C3 /* CoreGraphics.framework */; };
+		4B8BCC9D19FC38AF00ED74C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8BCC9C19FC38AF00ED74C3 /* UIKit.framework */; };
+		4B8BCC9F19FC38B400ED74C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8BCC9E19FC38B400ED74C3 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		4B89498319FC32610095FE04 /* FriendLendTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FriendLendTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B89498819FC32610095FE04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B89498919FC32610095FE04 /* FriendLendTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendLendTests.m; sourceTree = "<group>"; };
+		4B8BCC9819FC38A300ED74C3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4B8BCC9A19FC38A900ED74C3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4B8BCC9C19FC38AF00ED74C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4B8BCC9E19FC38B400ED74C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +64,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B8BCC9919FC38A300ED74C3 /* SystemConfiguration.framework in Frameworks */,
 				074DA89519FC338900CD2A51 /* libEstimoteSDK.a in Frameworks */,
+				4B8BCC9B19FC38A900ED74C3 /* CoreGraphics.framework in Frameworks */,
+				4B8BCC9D19FC38AF00ED74C3 /* UIKit.framework in Frameworks */,
+				4B8BCC9F19FC38B400ED74C3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +108,10 @@
 		4B89496119FC32610095FE04 = {
 			isa = PBXGroup;
 			children = (
+				4B8BCC9E19FC38B400ED74C3 /* Foundation.framework */,
+				4B8BCC9C19FC38AF00ED74C3 /* UIKit.framework */,
+				4B8BCC9A19FC38A900ED74C3 /* CoreGraphics.framework */,
+				4B8BCC9819FC38A300ED74C3 /* SystemConfiguration.framework */,
 				4B89496C19FC32610095FE04 /* FriendLend */,
 				4B89498619FC32610095FE04 /* FriendLendTests */,
 				4B89496B19FC32610095FE04 /* Products */,
