@@ -188,6 +188,11 @@
 					0719D19219FBCD0900CB2106 = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = SU974CA7YN;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					0719D1A719FBCD0900CB2106 = {
 						CreatedOnToolsVersion = 6.1;
