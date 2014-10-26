@@ -22,6 +22,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.menuItems = @[@[@"One", @"Two"]];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,6 +33,7 @@
 }
 
 #pragma mark - Table view data source
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.

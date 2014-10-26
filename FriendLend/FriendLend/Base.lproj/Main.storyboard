@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TQO-6R-rAl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TQO-6R-rAl">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--FriendLend-->
         <scene sceneID="Ddu-i1-kpE">
             <objects>
-                <tableViewController id="vzt-Be-F4B" customClass="ViewController" sceneMemberID="viewController">
+                <tableViewController title="FriendLend" id="vzt-Be-F4B" customClass="ViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="DUZ-jN-u9C">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,12 +37,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZaY-Fp-EoI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="619" y="287"/>
+            <point key="canvasLocation" x="571" y="287"/>
         </scene>
-        <!--Add new debt-->
+        <!--Create Loan Reminder-->
         <scene sceneID="e6J-jm-dDQ">
             <objects>
-                <viewController title="Add new debt" id="th1-QC-Bd3" customClass="AddNewDebtController" sceneMemberID="viewController">
+                <viewController title="Create Loan Reminder" id="th1-QC-Bd3" customClass="AddNewDebtController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PJX-A7-qdA"/>
                         <viewControllerLayoutGuide type="bottom" id="zhQ-gD-GzN"/>
@@ -51,20 +51,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" fixedFrame="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEw-lY-FBg">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" ambiguous="YES" misplaced="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEw-lY-FBg">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="£0.00" textAlignment="center" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="JiZ-Po-Sna">
-                                        <rect key="frame" x="0.0" y="143" width="600" height="39"/>
-                                        <color key="backgroundColor" red="0.95676887911547615" green="0.95555491857937414" blue="0.97675978535353536" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="th1-QC-Bd3" id="M7j-EI-N8b"/>
-                                        </connections>
-                                    </textField>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="TableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aDm-yP-9LX">
-                                        <rect key="frame" x="0.0" y="9" width="600" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="101"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PezCell" id="Z3F-hW-LJn">
@@ -79,7 +70,7 @@
                                             <outlet property="dataSource" destination="th1-QC-Bd3" id="pBO-T0-qZW"/>
                                         </connections>
                                     </tableView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxS-Dj-7sv">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxS-Dj-7sv">
                                         <rect key="frame" x="238" y="193" width="124" height="30"/>
                                         <state key="normal" title="Save Information">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -88,10 +79,33 @@
                                             <action selector="saveButton:" destination="th1-QC-Bd3" eventType="touchUpInside" id="v9B-47-pxo"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="£0.00" textAlignment="center" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="JiZ-Po-Sna">
+                                        <rect key="frame" x="192" y="141" width="216" height="39"/>
+                                        <color key="backgroundColor" red="0.95676887911547615" green="0.95555491857937414" blue="0.97675978535353536" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="th1-QC-Bd3" id="M7j-EI-N8b"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="yxS-Dj-7sv" firstAttribute="leading" secondItem="kEw-lY-FBg" secondAttribute="leading" id="Pvh-nI-G0U"/>
+                                    <constraint firstItem="JiZ-Po-Sna" firstAttribute="leading" secondItem="kEw-lY-FBg" secondAttribute="leading" id="XBE-m9-dLu"/>
+                                    <constraint firstAttribute="centerX" secondItem="JiZ-Po-Sna" secondAttribute="centerX" id="eFX-jn-YLG"/>
+                                    <constraint firstAttribute="trailing" secondItem="yxS-Dj-7sv" secondAttribute="trailing" id="hie-BZ-0c0"/>
+                                    <constraint firstAttribute="centerX" secondItem="yxS-Dj-7sv" secondAttribute="centerX" id="pnC-kG-cTw"/>
+                                    <constraint firstAttribute="trailing" secondItem="JiZ-Po-Sna" secondAttribute="trailing" id="tk3-vU-QCd"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kEw-lY-FBg" firstAttribute="leading" secondItem="ex6-Pq-XiT" secondAttribute="leadingMargin" id="9c2-Y3-iM0"/>
+                            <constraint firstItem="kEw-lY-FBg" firstAttribute="top" secondItem="PJX-A7-qdA" secondAttribute="bottom" id="c52-ra-kUm"/>
+                            <constraint firstItem="zhQ-gD-GzN" firstAttribute="top" secondItem="kEw-lY-FBg" secondAttribute="bottom" id="oxn-Vc-gRX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kEw-lY-FBg" secondAttribute="trailing" id="sRB-bi-vad"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="priceField" destination="JiZ-Po-Sna" id="UWw-ZO-oc7"/>
@@ -101,12 +115,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2aK-yR-LgW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1314" y="266"/>
+            <point key="canvasLocation" x="1346" y="287"/>
         </scene>
-        <!--People Who Owe Me-->
+        <!--Reminders-->
         <scene sceneID="5Zc-OS-MKz">
             <objects>
-                <tableViewController id="Emc-0T-Y2c" customClass="ListDebtsController" sceneMemberID="viewController">
+                <tableViewController title="Reminders" id="Emc-0T-Y2c" customClass="ListDebtsController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="oUH-hg-gWv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -124,18 +138,21 @@
                             <outlet property="delegate" destination="Emc-0T-Y2c" id="7gx-VS-QjH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="People Who Owe Me" id="7RB-hU-B7I">
+                    <navigationItem key="navigationItem" title="Reminders" id="7RB-hU-B7I">
                         <barButtonItem key="backBarButtonItem" title="Back" id="ePG-sA-R4i"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="zo6-PM-B7C" kind="show" identifier="ShowDistanceSegue" id="lws-AC-WFD"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnC-N3-iPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="303" y="1149"/>
+            <point key="canvasLocation" x="571" y="1037"/>
         </scene>
-        <!--View Controller-->
+        <!--Distance-->
         <scene sceneID="PhT-dv-ZgW">
             <objects>
-                <viewController id="zo6-PM-B7C" sceneMemberID="viewController">
+                <viewController title="Distance" id="zo6-PM-B7C" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uv5-wK-niK"/>
                         <viewControllerLayoutGuide type="bottom" id="wbb-2C-6bH"/>
@@ -160,7 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJb-Kk-0lM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1099" y="1038"/>
+            <point key="canvasLocation" x="1346" y="1037"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KbJ-Z8-Sa3">
@@ -181,10 +198,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vQj-IX-bO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-249" y="431"/>
+            <point key="canvasLocation" x="-199" y="287"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hFN-3u-E92"/>
+        <segue reference="Aq3-zN-ytK"/>
     </inferredMetricsTieBreakers>
 </document>
