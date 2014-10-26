@@ -64,7 +64,7 @@
                                                     minor:minorID
                                                identifier:@"RegionIdentifier"];
     
-    NSLog(@"UUID % major % minor %", ESTIMOTE_IOSBEACON_PROXIMITY_UUID,majorID,minorID);
+    NSLog(@"UUID %@ major %@ minor %@", ESTIMOTE_IOSBEACON_PROXIMITY_UUID,majorID,minorID);
     
     // Override point for customization after application launch.
     return YES;
