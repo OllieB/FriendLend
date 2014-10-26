@@ -25,6 +25,9 @@
 
 @property (strong) IBOutlet UITableView *tableView;
 
+- (IBAction)SaveButton:(id)sender;
+
+
 @end
 
 @interface ESTTableViewCell : UITableViewCell
@@ -47,6 +50,7 @@
 /*{
     NSArray *tableData;
 }*/
+
 
 - (void)viewDidLoad
 {
@@ -226,4 +230,6 @@
 }
 
 
+- (IBAction)SaveButton:(id)sender {
+}
 @end

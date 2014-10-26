@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TQO-6R-rAl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TQO-6R-rAl">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -54,14 +54,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" ambiguous="YES" misplaced="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEw-lY-FBg">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Select a nearby device:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xeq-A4-wYA">
-                                        <rect key="frame" x="15" y="14" width="445" height="32"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="£0.00" textAlignment="center" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="JiZ-Po-Sna">
-                                        <rect key="frame" x="0.0" y="194" width="600" height="39"/>
+                                        <rect key="frame" x="0.0" y="143" width="600" height="39"/>
                                         <color key="backgroundColor" red="0.95676887911547615" green="0.95555491857937414" blue="0.97675978535353536" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
@@ -70,7 +64,7 @@
                                         </connections>
                                     </textField>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" restorationIdentifier="TableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aDm-yP-9LX">
-                                        <rect key="frame" x="0.0" y="54" width="600" height="128"/>
+                                        <rect key="frame" x="0.0" y="9" width="600" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PezCell" id="Z3F-hW-LJn">
@@ -86,10 +80,13 @@
                                         </connections>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxS-Dj-7sv">
-                                        <rect key="frame" x="238" y="248" width="124" height="30"/>
+                                        <rect key="frame" x="238" y="193" width="124" height="30"/>
                                         <state key="normal" title="Save Information">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="SaveButton:" destination="th1-QC-Bd3" eventType="touchUpInside" id="Td8-Gf-nud"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -97,12 +94,9 @@
                                     <constraint firstItem="JiZ-Po-Sna" firstAttribute="leading" secondItem="kEw-lY-FBg" secondAttribute="leading" id="9wy-gi-D84"/>
                                     <constraint firstItem="yxS-Dj-7sv" firstAttribute="leading" secondItem="kEw-lY-FBg" secondAttribute="leading" constant="100" id="cCt-0G-Kcn"/>
                                     <constraint firstItem="aDm-yP-9LX" firstAttribute="leading" secondItem="kEw-lY-FBg" secondAttribute="leading" id="gy8-ly-nzy"/>
-                                    <constraint firstItem="Xeq-A4-wYA" firstAttribute="leading" secondItem="kEw-lY-FBg" secondAttribute="leading" id="hhp-i2-Qvc"/>
                                     <constraint firstAttribute="trailing" secondItem="aDm-yP-9LX" secondAttribute="trailing" id="mBp-sA-Bob"/>
                                     <constraint firstAttribute="trailing" secondItem="yxS-Dj-7sv" secondAttribute="trailing" constant="100" id="ogX-FX-zDt"/>
                                     <constraint firstItem="aDm-yP-9LX" firstAttribute="top" secondItem="kEw-lY-FBg" secondAttribute="top" id="pQs-vE-Rp8"/>
-                                    <constraint firstItem="Xeq-A4-wYA" firstAttribute="top" secondItem="kEw-lY-FBg" secondAttribute="top" constant="19" id="qxh-RI-hbp"/>
-                                    <constraint firstAttribute="trailing" secondItem="Xeq-A4-wYA" secondAttribute="trailing" id="tKz-5h-a3h"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -150,6 +144,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnC-N3-iPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="338" y="1101"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="PhT-dv-ZgW">
+            <objects>
+                <viewController id="zo6-PM-B7C" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uv5-wK-niK"/>
+                        <viewControllerLayoutGuide type="bottom" id="wbb-2C-6bH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5fI-9Z-Gfy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Distance: --" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOU-gd-BIb">
+                                <rect key="frame" x="146" y="197" width="308" height="77"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="51"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="WOU-gd-BIb" secondAttribute="trailing" id="GfC-Mf-QUa"/>
+                            <constraint firstItem="WOU-gd-BIb" firstAttribute="leading" secondItem="5fI-9Z-Gfy" secondAttribute="leadingMargin" id="skP-kh-UKU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uJb-Kk-0lM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1099" y="1038"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KbJ-Z8-Sa3">
