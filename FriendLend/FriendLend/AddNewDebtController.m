@@ -96,6 +96,10 @@
     
     [self.tableView setAllowsSelection:YES];
     
+    [self.tableView setDelegate:self];
+    
+    [self.tableView setDataSource:self];
+    
     /////////////////////////////////////////////////////////////
     // setup Estimote beacon manager
     
