@@ -24,6 +24,8 @@
 @property (nonatomic, strong) ESTBeaconRegion *region;
 @property (nonatomic, strong) NSArray *beaconsArray;
 
+@property (strong) IBOutlet UITableView *tableView;
+
 @end
 
 @implementation AddNewDebtController
