@@ -10,6 +10,7 @@
 
 @interface ListDebtsController()
     -(void) setSelectedPersonName:(NSString*)_personName;
+    -(void) setSelectedPrice:(float)_selectedPrice;
 @end
 
 @implementation ListDebtsController
@@ -24,6 +25,8 @@
     
     self.menuItems = @[@[@"One", @"Two"]];
     
+    
+    NSLog([[NSString alloc] initWithFormat:@"%@", string]);
 }
 
 - (void)didReceiveMemoryWarning {
