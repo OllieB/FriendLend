@@ -66,10 +66,8 @@
     if(indexPath.row == 0 && self.selectedPersonName) {
         name = self.selectedPersonName;
         moneyOwed = self.selectedPrice;
-        NSLog(@"The image name is");
-        NSLog(imageName);
         
-        imageName = ([imageName isEqualToString:@"Pez Cuckow"]) ? @"Pez" : @"Ollie";
+        imageName = ([name isEqualToString:@"Pez Cuckow"]) ? @"Pez" : @"Ollie";
         
     } else {
         name = @"Patrick the Panda";
