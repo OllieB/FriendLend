@@ -38,6 +38,7 @@
     // create manager instance
     self.beaconManager = [[ESTBeaconManager alloc] init];
     self.beaconManager.delegate = self;
+    
     //self.beaconManager.avoidUnknownStateBeacons = YES;
     
     
@@ -45,6 +46,7 @@
     ESTBeaconRegion* region = [[ESTBeaconRegion alloc] initWithProximityUUID:ESTIMOTE_IOSBEACON_PROXIMITY_UUID
                                                                        major:1337
                                identifier:@"RegionIdentifier"];
+    region.notifyEntryStateOnDisplay = YES;
     
     [self.beaconManager startAdvertisingWithProximityUUID:ESTIMOTE_IOSBEACON_PROXIMITY_UUID
                                                     major:1337

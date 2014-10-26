@@ -47,6 +47,56 @@
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }
     
+    // Do any additional setup after loading the view from its nib.
+    size_t size;
+    sysctlbyname("hw.machine", NULL, &size, NULL, 0);
+    char *machine = malloc(size);
+    sysctlbyname("hw.machine", machine, &size, NULL, 0);
+    NSString *platform = [NSString stringWithCString:machine encoding:NSUTF8StringEncoding];
+    NSLog(@"iPhone Device %@",platform);
+    
+    int minorID;
+    if ([platform isEqualToString:@"x86_64"]) {
+        minorID = 50;
+    }
+    else if ([platform isEqualToString:@"iPhone7,2"]) {
+        minorID = 40;
+    }
+    else if ([platform isEqualToString:@"iPhone6,2"]) {
+        minorID = 30;
+    } else {
+        minorID = arc4random_uniform(74);
+    }
+    
+    int majorID = 1337;
+    
+    
+    /////////////////////////////////////////////////////////////
+    // setup Estimote beacon manager
+    
+    // create manager instance
+    self.beaconManager = [[ESTBeaconManager alloc] init];
+    self.beaconManager.delegate = self;
+    
+    //self.beaconManager.avoidUnknownStateBeacons = YES;
+    
+    
+    //NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"];
+    ESTBeaconRegion* region = [[ESTBeaconRegion alloc] initWithProximityUUID:ESTIMOTE_IOSBEACON_PROXIMITY_UUID
+                                                                       major:1337
+                                                                  identifier:@"RegionIdentifier"];
+    region.notifyEntryStateOnDisplay = YES;
+    
+    [self.beaconManager startAdvertisingWithProximityUUID:ESTIMOTE_IOSBEACON_PROXIMITY_UUID
+                                                    major:majorID
+                                                    minor:minorID
+                                               identifier:@"RegionIdentifier"];
+    
+    NSLog(@"major %i minor %i", majorID,minorID);
+    
+    region.notifyOnEntry = true;
+    region.notifyOnExit = true;
+    
     /*
      * Ask to be a beacon
      */
@@ -56,9 +106,7 @@
             /*
              * No need to explicitly request permission in iOS < 8, will happen automatically when starting ranging.
              */
-            /*[self.beaconManager startRangingBeaconsInRegion:region];*/
-            // DO SOME RANGING!!!!!!
-            NSLog(@"Authed now iOS7");
+            [self.beaconManager startRangingBeaconsInRegion:region];
         } else {
             /*
              * Request permission to use Location Services. (new in iOS 8)
@@ -73,8 +121,7 @@
     }
     else if([ESTBeaconManager authorizationStatus] == kCLAuthorizationStatusAuthorized)
     {
-        /*[self.beaconManager startRangingBeaconsInRegion:region];*/
-        // DO SOME RANGING!!!!!!
+        [self.beaconManager startRangingBeaconsInRegion:region];
         NSLog(@"Allready authed iOS8");
     }
     else if([ESTBeaconManager authorizationStatus] == kCLAuthorizationStatusDenied)
@@ -98,34 +145,11 @@
         [alert show];
     }
     
-    // Do any additional setup after loading the view from its nib.
-    size_t size;
-    sysctlbyname("hw.machine", NULL, &size, NULL, 0);
-    char *machine = malloc(size);
-    sysctlbyname("hw.machine", machine, &size, NULL, 0);
-    NSString *platform = [NSString stringWithCString:machine encoding:NSUTF8StringEncoding];
-    NSLog(@"iPhone Device %@",platform);
-    
-    int minorID;
-    if ([platform isEqualToString:@"x86_64"]) {
-        minorID = 50;
-    }
-    else if ([platform isEqualToString:@"iPhone7,2"]) {
-        minorID = 40;
-    }
-    else if ([platform isEqualToString:@"iPhone6,2"]) {
-        minorID = 30;
-    } else {
-        minorID = arc4random_uniform(74);
-    }
-    
-    int majorID = 1337;
-    [self.beaconManager startAdvertisingWithProximityUUID:ESTIMOTE_IOSBEACON_PROXIMITY_UUID
-                                                    major:majorID
-                                                    minor:minorID
-                                               identifier:@"RegionIdentifier"];
-    
-    NSLog(@"major %i minor %i", majorID,minorID);
+    // start looking for estimote beacons in region
+    // when beacon ranged beaconManager:didEnterRegion:
+    // and beaconManager:didExitRegion: invoked
+    [self.beaconManager startMonitoringForRegion:region];
+    [self.beaconManager requestStateForRegion:region];
 }
 
 #pragma mark - Table view data source
@@ -220,5 +244,85 @@
         [self.navigationController pushViewController:demoViewController animated:YES];
     }
 }
+
+#pragma mark - ESTBeaconManager delegate
+
+- (void)beaconManager:(ESTBeaconManager *)manager didEnterRegion:(ESTBeaconRegion *)region
+{
+    UILocalNotification *notification = [UILocalNotification new];
+    notification.alertBody = @"Enter region notification";
+    
+    NSLog(@"Enter region");
+    
+    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+}
+
+- (void)beaconManager:(ESTBeaconManager *)manager didExitRegion:(ESTBeaconRegion *)region
+{
+    UILocalNotification *notification = [UILocalNotification new];
+    notification.alertBody = @"Exit region notification";
+    
+    NSLog(@"Leave region");
+    
+    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+}
+
+- (void)beaconManager:(ESTBeaconManager *)manager didDetermineState:(CLRegionState)state forRegion:(ESTBeaconRegion *)region {
+    if (state == CLRegionStateInside) {
+        ESTBeaconRegion *beaconRegion = (ESTBeaconRegion *)region;
+        [self.beaconManager startRangingBeaconsInRegion:beaconRegion];
+    }
+    
+    NSLog(@"didDetermineState");
+}
+
+- (void)beaconManager:(ESTBeaconManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(ESTBeaconRegion *)region {
+    for (ESTBeacon *beacon in beacons) {
+        NSLog(@"Ranging beacon: %@", beacon.proximityUUID);
+        NSLog(@"%@ - %@", beacon.major, beacon.minor);
+        NSLog(@"Range: %@", [self stringForProximity:beacon.proximity]);
+        
+        //cell.detailTextLabel.text = [NSString stringWithFormat:@"Distance: %.2f", [beacon.distance floatValue]];
+        NSLog([NSString stringWithFormat:@"Distance: %.2f", [beacon.distance floatValue]]);
+        
+        [self setColorForProximity:beacon.proximity];
+    }
+}
+
+- (void)setColorForProximity:(CLProximity)proximity {
+    switch (proximity) {
+        case CLProximityUnknown:
+            self.view.backgroundColor = [UIColor whiteColor];
+            break;
+            
+        case CLProximityFar:
+            self.view.backgroundColor = [UIColor yellowColor];
+            break;
+            
+        case CLProximityNear:
+            self.view.backgroundColor = [UIColor orangeColor];
+            break;
+            
+        case CLProximityImmediate:
+            self.view.backgroundColor = [UIColor redColor];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (NSString *)stringForProximity:(CLProximity)proximity {
+    switch (proximity) {
+        case CLProximityUnknown:    return @"Unknown";
+        case CLProximityFar:        return @"Far";
+        case CLProximityNear:       return @"Near";
+        case CLProximityImmediate:  return @"Immediate";
+        default:
+            return nil;
+    }
+}
+
+#pragma mark -
 
 @end
