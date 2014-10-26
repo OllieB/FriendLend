@@ -12,6 +12,6 @@
     @property (strong, nonatomic)  NSArray *listItems;
     @property (strong, nonatomic)  NSString *selectedPersonName;
     @property (strong, nonatomic)  float *selectedPrice;
-
+    @property (strong, nonatomic)  NSArray *menuItems;
     -(void) setSelectedPersonName:(NSString*)_personName;
 @end
