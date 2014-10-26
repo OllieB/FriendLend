@@ -25,6 +25,8 @@
     
     self.menuItems = @[@[@"One", @"Two"]];
     
+    
+    NSLog([[NSString alloc] initWithFormat:@"%@", string]);
 }
 
 - (void)didReceiveMemoryWarning {
