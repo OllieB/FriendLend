@@ -105,13 +105,13 @@
         minorID = arc4random_uniform(74);
     }
     
-    NSInteger majorID = 1337;
+    int majorID = 1337;
     [self.beaconManager startAdvertisingWithProximityUUID:ESTIMOTE_IOSBEACON_PROXIMITY_UUID
                                                     major:majorID
                                                     minor:minorID
                                                identifier:@"RegionIdentifier"];
     
-    NSLog(@"UUID %@ major %@ minor %", ESTIMOTE_IOSBEACON_PROXIMITY_UUID,majorID,minorID);
+    NSLog(@"major %i minor %i", majorID,minorID);
     
     // Override point for customization after application launch.
     return YES;
