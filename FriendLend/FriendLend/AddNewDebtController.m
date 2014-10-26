@@ -76,6 +76,13 @@
         // Pass the information to your destination view
         [destination setSelectedPersonName:personName];
         
+        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+        numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+        
+        float value = [numberFormatter numberFromString:@"32.12"].floatValue;
+        
+        [destination setSelectedPrice:personName];
+        
         //ESTBeacon *selectedBeacon = [self.beaconsArray objectAtIndex:selectedRow];
     }
 }

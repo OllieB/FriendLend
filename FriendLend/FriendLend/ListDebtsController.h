@@ -13,4 +13,5 @@
     @property (strong, nonatomic)  NSString *selectedPersonName;
 
     -(void) setSelectedPersonName:(NSString*)_personName;
+    -(void) setSelectedPrice:(float)_selectedPrice;
 @end
