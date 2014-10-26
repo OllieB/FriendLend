@@ -52,7 +52,7 @@
     else if ([platform isEqualToString:@"iPhone7,2"]) {
         minorID = 40;
     }
-    else if ([platform isEqualToString:@"iPhone6,1"]) {
+    else if ([platform isEqualToString:@"iPhone6,2"]) {
         minorID = 30;
     } else {
         minorID = arc4random_uniform(74);
