@@ -12,6 +12,9 @@
 #include <sys/sysctl.h>
 #include <stdlib.h>
 
+@interface ViewController() <ESTBeaconManagerDelegate>
+@end
+
 @implementation ViewController
 
 - (void)loadView {
@@ -251,7 +254,9 @@
 - (void)beaconManager:(ESTBeaconManager *)manager didEnterRegion:(ESTBeaconRegion *)region
 {
     UILocalNotification *notification = [UILocalNotification new];
-    notification.alertBody = @"Enter region notification";
+    notification.alertBody = @"A friend who owes you money is nearby!";
+    NSDictionary *infoDict=[NSDictionary dictionaryWithObject:@"1234" forKey:@"IDkey"];
+    notification.userInfo = infoDict;
     notification.soundName = UILocalNotificationDefaultSoundName;
     
     NSLog(@"Enter region");
@@ -262,7 +267,7 @@
 - (void)beaconManager:(ESTBeaconManager *)manager didExitRegion:(ESTBeaconRegion *)region
 {
     UILocalNotification *notification = [UILocalNotification new];
-    notification.alertBody = @"Exit region notification";
+    notification.alertBody = @"The friend who owed you money has left";
     notification.soundName = UILocalNotificationDefaultSoundName;
     
     NSLog(@"Leave region");
