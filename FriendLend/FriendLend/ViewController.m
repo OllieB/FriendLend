@@ -86,7 +86,7 @@
                 
                //
                
-                [self performSegueWithIdentifier:@"MoveToList" sender:self];
+                [self performSegueWithIdentifier:@"AddNewDebtSegue" sender:self];
             /*performSegueWithIdentifier:(NSString *)identifier
             sender:(id)sender*/
                 
@@ -96,11 +96,15 @@
             {
                 NSLog(@"Clicked List people I owe");
                 
+                [self performSegueWithIdentifier:@"ListDebtsSegue" sender:self];
+                
                 break;
             }
             case 2:
             {
                 NSLog(@"Clicked List people who owe me");
+                
+                [self performSegueWithIdentifier:@"ListDebtsSegue" sender:self];
                 
                 
                 break;
