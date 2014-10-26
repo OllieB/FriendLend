@@ -178,16 +178,35 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ESTTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier" forIndexPath:indexPath];
+    static NSString *simpleTableIdentifier = @"PezCell";
+    
+    ESTTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    //ESTTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier" forIndexPath:indexPath];
     
     /*
      * Fill the table with beacon data.
      */
     ESTBeacon *beacon = [self.beaconsArray objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"Major: %@, Minor: %@", beacon.major, beacon.minor];
+    NSInteger minor = [beacon.minor intValue];
+    NSString *name;
+    NSString *imageName;
+    if(minor == 30) {
+        name = @"Pez Cuckow";
+        imageName = @"Pez";
+    } else if(minor == 40) {
+        name = @"Ollie Brown";
+        imageName = @"Ollie";
+    } else {
+        name = @"Unknown Friend";
+        imageName = @"beacon";
+    }
+    
+    //cell.textLabel.text = [NSString stringWithFormat:@"Major: %@, Minor: %@", beacon.major, beacon.minor];
+    cell.textLabel.text = name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Distance: %.2f", [beacon.distance floatValue]];
-    cell.imageView.image = [UIImage imageNamed:@"beacon"];
+    cell.imageView.image = [UIImage imageNamed:imageName];
     
     return cell;
 }
