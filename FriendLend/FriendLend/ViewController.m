@@ -251,6 +251,7 @@
 {
     UILocalNotification *notification = [UILocalNotification new];
     notification.alertBody = @"Enter region notification";
+    notification.soundName = UILocalNotificationDefaultSoundName;
     
     NSLog(@"Enter region");
     
@@ -261,6 +262,7 @@
 {
     UILocalNotification *notification = [UILocalNotification new];
     notification.alertBody = @"Exit region notification";
+    notification.soundName = UILocalNotificationDefaultSoundName;
     
     NSLog(@"Leave region");
     
