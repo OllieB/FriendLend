@@ -37,7 +37,7 @@
     [self.navigationController.navigationBar
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 
-    self.menuItems = @[@[@"Add a New Lend", @"List people I owe", @"List people who owe me"]];
+    self.menuItems = @[@[@"Create a loan reminder", @"List current reminders"]];
     
     
     NSLog(@"I opened ViewDidLoad in ViewController");
