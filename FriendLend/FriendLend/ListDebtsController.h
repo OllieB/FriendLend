@@ -11,6 +11,7 @@
 @interface ListDebtsController : UITableViewController
     @property (strong, nonatomic)  NSArray *listItems;
     @property (strong, nonatomic)  NSString *selectedPersonName;
+    @property (strong, nonatomic)  float *selectedPrice;
 
     -(void) setSelectedPersonName:(NSString*)_personName;
 @end
