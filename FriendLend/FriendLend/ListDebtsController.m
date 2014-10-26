@@ -26,7 +26,7 @@
     self.menuItems = @[@[@"One", @"Two"]];
     
     
-    NSLog([[NSString alloc] initWithFormat:@"%@", string]);
+    NSLog([[NSString alloc] initWithFormat:@"%s owes you %1.2f", self.selectedPersonName, self.selectedPrice]);
 }
 
 - (void)didReceiveMemoryWarning {

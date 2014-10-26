@@ -54,7 +54,7 @@
 - (IBAction)saveButton:(id)sender {
     
     //ReturnDebtsFromAddSegue
-    
+    [self performSegueWithIdentifier:@"ReturnDebtsFromAddSegue" sender:self];
 }
 
 // This will get called too before the view appears
@@ -81,7 +81,9 @@
         
         float value = [numberFormatter numberFromString:@"32.12"].floatValue;
         
-        [destination setSelectedPrice:personName];
+        [destination setSelectedPrice:value];
+        
+        
         
         //ESTBeacon *selectedBeacon = [self.beaconsArray objectAtIndex:selectedRow];
     }
