@@ -25,10 +25,12 @@
     
     self.tableView.sectionHeaderHeight = 20;
     
-    self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
-    self.navigationController.navigationBar.tintColor = [UIColor grayColor];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:31.0/255.0 green:45.0/255.0 blue:83.0/255.0 alpha:1];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = YES;
-    
+    [self.navigationController.navigationBar
+     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+
     self.menuItems = @[@[@"Add a New Lend", @"List people I owe", @"List people who owe me"]];
 }
 

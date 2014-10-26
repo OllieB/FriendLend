@@ -27,7 +27,9 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" id="ngw-Zc-2EN"/>
+                    <navigationItem key="navigationItem" id="ngw-Zc-2EN">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="mQd-RP-NOV"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="9C6-hX-goK" kind="show" identifier="AddNewDebtSegue" id="AiE-bU-3fM"/>
                         <segue destination="Emc-0T-Y2c" kind="show" identifier="ListDebtsSegue" id="Aq3-zN-ytK"/>
@@ -66,10 +68,10 @@
             </objects>
             <point key="canvasLocation" x="338" y="1101"/>
         </scene>
-        <!--AddNewDebtController-->
+        <!--Add New Debt-->
         <scene sceneID="wCj-N6-MiN">
             <objects>
-                <viewController title="AddNewDebtController" id="9C6-hX-goK" customClass="AddNewDebtController" sceneMemberID="viewController">
+                <viewController title="Add New Debt" id="9C6-hX-goK" customClass="AddNewDebtController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yol-7z-pE9"/>
                         <viewControllerLayoutGuide type="bottom" id="Ald-YZ-MwD"/>
@@ -88,14 +90,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WSJ-IO-qyh">
-                                <rect key="frame" x="0.0" y="63" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Nearby FriendLenders" id="zwr-50-wgT">
-                                        <barButtonItem key="backBarButtonItem" title="Back!" id="pg5-GY-maK"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
