@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -31,9 +32,8 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="mQd-RP-NOV"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="9C6-hX-goK" kind="show" identifier="AddNewDebtSegue" id="AiE-bU-3fM"/>
                         <segue destination="Emc-0T-Y2c" kind="show" identifier="ListDebtsSegue" id="Aq3-zN-ytK"/>
-                        <segue destination="th1-QC-Bd3" kind="show" identifier="TestViewSegue" id="Jqv-vV-ZVS"/>
+                        <segue destination="th1-QC-Bd3" kind="show" identifier="AddNewDebtSegue" id="Jqv-vV-ZVS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZaY-Fp-EoI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -62,13 +62,26 @@
                                 <rect key="frame" x="0.0" y="121" width="600" height="317"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxS-Dj-7sv">
+                                <rect key="frame" x="238" y="501" width="124" height="30"/>
+                                <state key="normal" title="Save Information">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="£0.00" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JiZ-Po-Sna">
+                                <rect key="frame" x="252" y="463" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="aDm-yP-9LX" secondAttribute="trailing" id="ILD-1L-qfA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Xeq-A4-wYA" secondAttribute="trailing" id="fnK-Uo-hbN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yxS-Dj-7sv" secondAttribute="trailing" multiplier="1/3" id="gLY-lz-ZZu"/>
                             <constraint firstItem="aDm-yP-9LX" firstAttribute="leading" secondItem="ex6-Pq-XiT" secondAttribute="leadingMargin" id="gv8-7u-8Db"/>
                             <constraint firstItem="Xeq-A4-wYA" firstAttribute="leading" secondItem="ex6-Pq-XiT" secondAttribute="leadingMargin" id="lwu-yi-ULj"/>
+                            <constraint firstItem="yxS-Dj-7sv" firstAttribute="leading" secondItem="ex6-Pq-XiT" secondAttribute="leadingMargin" multiplier="1/3" id="uY6-cg-aY2"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -104,61 +117,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnC-N3-iPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="338" y="1101"/>
-        </scene>
-        <!--Add New Debt-->
-        <scene sceneID="wCj-N6-MiN">
-            <objects>
-                <viewController title="Add New Debt" id="9C6-hX-goK" customClass="AddNewDebtController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yol-7z-pE9"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ald-YZ-MwD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hbw-ER-BbS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ftB-9f-LXJ">
-                                <rect key="frame" x="0.0" y="113" width="600" height="300"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Select a nearby device:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8C-jZ-BEE">
-                                <rect key="frame" x="16" y="86" width="568" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="16" y="86" width="368" height="21"/>
-                                </variation>
-                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="16" y="86" width="368" height="21"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="16" y="86" width="768" height="21"/>
-                                </variation>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Q8C-jZ-BEE" secondAttribute="trailing" id="HgW-n1-Ls4"/>
-                            <constraint firstItem="Q8C-jZ-BEE" firstAttribute="leading" secondItem="hbw-ER-BbS" secondAttribute="leadingMargin" id="OC8-p0-SXT"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ftB-9f-LXJ" secondAttribute="trailing" id="Wys-sW-fix"/>
-                            <constraint firstItem="ftB-9f-LXJ" firstAttribute="leading" secondItem="hbw-ER-BbS" secondAttribute="leadingMargin" id="atg-ju-UfI"/>
-                            <constraint firstItem="Q8C-jZ-BEE" firstAttribute="leading" secondItem="hbw-ER-BbS" secondAttribute="leadingMargin" id="d2R-99-anF"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Q8C-jZ-BEE" secondAttribute="trailing" id="fa8-hG-0Wp"/>
-                            <constraint firstItem="Q8C-jZ-BEE" firstAttribute="leading" secondItem="hbw-ER-BbS" secondAttribute="leadingMargin" id="ulq-3e-0Pj"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="OC8-p0-SXT"/>
-                                <exclude reference="fa8-hG-0Wp"/>
-                                <exclude reference="ulq-3e-0Pj"/>
-                            </mask>
-                        </variation>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GbZ-re-Oea" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1546" y="1049"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KbJ-Z8-Sa3">
