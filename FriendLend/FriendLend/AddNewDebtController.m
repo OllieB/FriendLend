@@ -8,6 +8,7 @@
 
 #import "AddNewDebtController.h"
 #import "ESTBeaconManager.h"
+#import "ListDebtsController.h"
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -51,28 +52,31 @@
 }*/
 
 - (IBAction)saveButton:(id)sender {
-
-    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-    int selectedRow = selectedIndexPath.row;
     
-    NSLog([[NSString alloc] initWithFormat:@"Price: %@ IndexPath: %i",
-           self.priceField.text, selectedRow]);
+    //ReturnDebtsFromAddSegue
     
 }
 
 // This will get called too before the view appears
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"ReturnToDebtFromAddSegue"]) {
+    if ([[segue identifier] isEqualToString:@"ReturnDebtsFromAddSegue"]) {
         
         // Get destination view
-        SecondView *vc = [segue destinationViewController];
+
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
         
-        // Get button tag number (or do whatever you need to do here, based on your object
-        NSInteger tagIndex = [(UIButton *)sender tag];
+        ListDebtsController *destination = segue.destinationViewController;
+        
+        //NSLog([[NSString alloc] initWithFormat:@"Price: %@ IndexPath: %i", self.priceField.text, selectedRow]);
+        
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:selectedIndexPath];
+        NSString *personName = cell.textLabel.text;
         
         // Pass the information to your destination view
-        [vc setSelectedButton:tagIndex];
+        [destination setSelectedPersonName:personName];
+        
+        //ESTBeacon *selectedBeacon = [self.beaconsArray objectAtIndex:selectedRow];
     }
 }
 

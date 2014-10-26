@@ -8,6 +8,10 @@
 
 #import "ListDebtsController.h"
 
+@interface ListDebtsController()
+    -(void) setSelectedPersonName:(NSString*)_personName;
+@end
+
 @implementation ListDebtsController
 
 @synthesize listItems;
@@ -36,6 +40,11 @@
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 0;
+}
+
+-(void)setSelectedPersonName:(NSString*)_personName
+{
+    self.selectedPersonName = _personName;
 }
 
 /*
