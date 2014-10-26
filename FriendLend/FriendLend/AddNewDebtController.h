@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ESTBeaconManager.h"
 
 @interface AddNewDebtController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-
+    @property (nonatomic, strong) ESTBeaconManager  *beaconManager;
 @end

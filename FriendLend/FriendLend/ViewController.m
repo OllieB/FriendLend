@@ -280,7 +280,7 @@
 }
 
 - (void)beaconManager:(ESTBeaconManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(ESTBeaconRegion *)region {
-    for (ESTBeacon *beacon in beacons) {
+    /*for (ESTBeacon *beacon in beacons) {
         NSLog(@"Ranging beacon: %@", beacon.proximityUUID);
         NSLog(@"%@ - %@", beacon.major, beacon.minor);
         NSLog(@"Range: %@", [self stringForProximity:beacon.proximity]);
@@ -289,7 +289,7 @@
         NSLog([NSString stringWithFormat:@"Distance: %.2f", [beacon.distance floatValue]]);
         
         [self setColorForProximity:beacon.proximity];
-    }
+    }*/
 }
 
 - (void)setColorForProximity:(CLProximity)proximity {
