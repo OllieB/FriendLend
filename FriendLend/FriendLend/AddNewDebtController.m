@@ -25,8 +25,7 @@
 
 @property (strong) IBOutlet UITableView *tableView;
 
-- (IBAction)SaveButton:(id)sender;
-
+@property (weak, nonatomic) IBOutlet UITextField *priceField;
 
 @end
 
@@ -51,6 +50,15 @@
     NSArray *tableData;
 }*/
 
+- (IBAction)saveButton:(id)sender {
+
+    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+    int selectedRow = selectedIndexPath.row;
+    
+    NSLog([[NSString alloc] initWithFormat:@"Price: %@ IndexPath: %i",
+           self.priceField.text, selectedRow]);
+    
+}
 
 - (void)viewDidLoad
 {
