@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ESTBeaconManager.h"
+
 @interface ViewController : UITableViewController
     @property (strong, nonatomic)  NSArray *menuItems;
+    @property (nonatomic, strong) ESTBeaconManager  *beaconManager;
 @end
