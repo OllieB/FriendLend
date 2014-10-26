@@ -10,7 +10,7 @@
 
 @interface ListDebtsController()
     -(void) setSelectedPersonName:(NSString*)_personName;
--(void) setSelectedPrice:(float*)_selectedPrice;
+    -(void) setSelectedPrice:(float)_selectedPrice;
 @end
 
 @implementation ListDebtsController
