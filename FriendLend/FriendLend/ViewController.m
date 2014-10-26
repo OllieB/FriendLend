@@ -58,6 +58,7 @@
              */
             /*[self.beaconManager startRangingBeaconsInRegion:region];*/
             // DO SOME RANGING!!!!!!
+            NSLog(@"Authed now iOS7");
         } else {
             /*
              * Request permission to use Location Services. (new in iOS 8)
@@ -74,6 +75,7 @@
     {
         /*[self.beaconManager startRangingBeaconsInRegion:region];*/
         // DO SOME RANGING!!!!!!
+        NSLog(@"Allready authed iOS8");
     }
     else if([ESTBeaconManager authorizationStatus] == kCLAuthorizationStatusDenied)
     {
