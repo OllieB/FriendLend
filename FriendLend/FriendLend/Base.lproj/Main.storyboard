@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TQO-6R-rAl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TQO-6R-rAl">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -51,10 +51,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" ambiguous="YES" misplaced="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEw-lY-FBg">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" fixedFrame="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEw-lY-FBg">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="£0.00" textAlignment="center" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="JiZ-Po-Sna">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="£0.00" textAlignment="center" minimumFontSize="32" translatesAutoresizingMaskIntoConstraints="NO" id="JiZ-Po-Sna">
                                         <rect key="frame" x="0.0" y="143" width="600" height="39"/>
                                         <color key="backgroundColor" red="0.95676887911547615" green="0.95555491857937414" blue="0.97675978535353536" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
@@ -63,7 +63,7 @@
                                             <outlet property="delegate" destination="th1-QC-Bd3" id="M7j-EI-N8b"/>
                                         </connections>
                                     </textField>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" restorationIdentifier="TableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aDm-yP-9LX">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="TableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aDm-yP-9LX">
                                         <rect key="frame" x="0.0" y="9" width="600" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
@@ -79,39 +79,24 @@
                                             <outlet property="dataSource" destination="th1-QC-Bd3" id="pBO-T0-qZW"/>
                                         </connections>
                                     </tableView>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxS-Dj-7sv">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxS-Dj-7sv">
                                         <rect key="frame" x="238" y="193" width="124" height="30"/>
                                         <state key="normal" title="Save Information">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="SaveButton:" destination="th1-QC-Bd3" eventType="touchUpInside" id="Td8-Gf-nud"/>
                                             <action selector="saveButton:" destination="th1-QC-Bd3" eventType="touchUpInside" id="v9B-47-pxo"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="JiZ-Po-Sna" secondAttribute="trailing" id="1Kj-sr-EQC"/>
-                                    <constraint firstItem="JiZ-Po-Sna" firstAttribute="leading" secondItem="kEw-lY-FBg" secondAttribute="leading" id="9wy-gi-D84"/>
-                                    <constraint firstItem="yxS-Dj-7sv" firstAttribute="leading" secondItem="kEw-lY-FBg" secondAttribute="leading" constant="100" id="cCt-0G-Kcn"/>
-                                    <constraint firstItem="aDm-yP-9LX" firstAttribute="leading" secondItem="kEw-lY-FBg" secondAttribute="leading" id="gy8-ly-nzy"/>
-                                    <constraint firstAttribute="trailing" secondItem="aDm-yP-9LX" secondAttribute="trailing" id="mBp-sA-Bob"/>
-                                    <constraint firstAttribute="trailing" secondItem="yxS-Dj-7sv" secondAttribute="trailing" constant="100" id="ogX-FX-zDt"/>
-                                    <constraint firstItem="aDm-yP-9LX" firstAttribute="top" secondItem="kEw-lY-FBg" secondAttribute="top" id="pQs-vE-Rp8"/>
-                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="kEw-lY-FBg" firstAttribute="top" secondItem="PJX-A7-qdA" secondAttribute="bottom" id="VXs-k3-UVp"/>
-                            <constraint firstItem="kEw-lY-FBg" firstAttribute="leading" secondItem="ex6-Pq-XiT" secondAttribute="leadingMargin" id="ieh-wF-KUi"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="kEw-lY-FBg" secondAttribute="trailing" id="nqF-D3-GE6"/>
-                            <constraint firstItem="zhQ-gD-GzN" firstAttribute="top" secondItem="kEw-lY-FBg" secondAttribute="bottom" id="yVg-Ej-fOn"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="priceField" destination="JiZ-Po-Sna" id="UWw-ZO-oc7"/>
                         <outlet property="tableView" destination="aDm-yP-9LX" id="0g4-Yb-KiW"/>
+                        <segue destination="Emc-0T-Y2c" kind="show" identifier="ReturnDebtsFromAddSegue" id="hFN-3u-E92"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2aK-yR-LgW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -145,7 +130,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnC-N3-iPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="338" y="1101"/>
+            <point key="canvasLocation" x="303" y="1149"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="PhT-dv-ZgW">
@@ -199,4 +184,7 @@
             <point key="canvasLocation" x="-249" y="431"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hFN-3u-E92"/>
+    </inferredMetricsTieBreakers>
 </document>
