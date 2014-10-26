@@ -28,6 +28,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *priceField;
 
+@property (nonatomic, strong) NSString* personName;
+
 @end
 
 @interface ESTTableViewCell : UITableViewCell
@@ -68,18 +70,17 @@
         
         ListDebtsController *destination = segue.destinationViewController;
         
-        NSLog([[NSString alloc] initWithFormat:@"Price: %@ IndexPath: %i", self.priceField.text, selectedIndexPath.row]);
-        
-        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:selectedIndexPath];
-        NSString *personName = cell.textLabel.text;
+        NSLog([[NSString alloc] initWithFormat:@"Price: %@ IndexPath: %li", self.priceField.text, selectedIndexPath.row]);
         
         // Pass the information to your destination view
-        [destination setSelectedPersonName:personName];
+        [destination setSelectedPersonName:self.personName];
         
         NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
         numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
         
-        float value = [numberFormatter numberFromString:@"32.12"].floatValue;
+        float value = [numberFormatter numberFromString:self.priceField.text].floatValue;
+        
+        NSLog([[NSString alloc] initWithFormat:@"Price as a float is %1.2f", value]);
         
         [destination setSelectedPrice:value];
         
@@ -248,6 +249,8 @@
     cell.textLabel.text = name;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Distance: %.2f", [beacon.distance floatValue]];
     cell.imageView.image = [UIImage imageNamed:imageName];
+
+    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     
     return cell;
 }
@@ -263,7 +266,10 @@
 {
     ESTBeacon *selectedBeacon = [self.beaconsArray objectAtIndex:indexPath.row];
     
-    //self.completion(selectedBeacon);
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    self.personName = cell.textLabel.text;
+    
+    NSLog([[NSString alloc] initWithFormat:@"Person name is now: %@", self.personName]);
 }
 
 

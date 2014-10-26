@@ -81,7 +81,7 @@
     }
     
     cell.textLabel.text = name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Owes you: %.2f", moneyOwed];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Owes you: £%.2f", moneyOwed];
     cell.imageView.image = [UIImage imageNamed:imageName];
     
     return cell;
