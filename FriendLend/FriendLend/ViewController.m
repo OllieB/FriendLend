@@ -228,7 +228,8 @@
             {
                 NSLog(@"Clicked List people who owe me");
                 
-                [self performSegueWithIdentifier:@"ListDebtsSegue" sender:self];
+                //[self performSegueWithIdentifier:@"ListDebtsSegue" sender:self];
+                [self performSegueWithIdentifier:@"TestViewSegue" sender:self];
                 
                 
                 break;
