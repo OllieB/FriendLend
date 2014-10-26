@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ListViewController : UITableViewController
+@interface ListDebtsController : UITableViewController
     @property (strong, nonatomic)  NSArray *listItems;
 @end

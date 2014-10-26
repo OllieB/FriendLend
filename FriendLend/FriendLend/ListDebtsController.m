@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Pez Cuckow. All rights reserved.
 //
 
-#import "ListViewController.h"
+#import "ListDebtsController.h"
 
-@implementation ListViewController
+@implementation ListDebtsController
 
 @synthesize listItems;
 

@@ -84,6 +84,12 @@
             {
                 NSLog(@"Clicked Add a New Lend");
                 
+               //
+               
+                [self performSegueWithIdentifier:@"MoveToList" sender:self];
+            /*performSegueWithIdentifier:(NSString *)identifier
+            sender:(id)sender*/
+                
                 break;
             }
             case 1:
