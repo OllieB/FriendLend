@@ -66,12 +66,6 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aDm-yP-9LX">
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="th1-QC-Bd3" id="pBO-T0-qZW"/>
-                                        </connections>
-                                    </tableView>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ytW-my-yXm">
                                         <rect key="frame" x="394" y="267" width="94" height="29"/>
                                     </stepper>
@@ -80,14 +74,27 @@
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="th1-QC-Bd3" id="M7j-EI-N8b"/>
+                                        </connections>
                                     </textField>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aDm-yP-9LX">
+                                        <rect key="frame" x="0.0" y="54" width="600" height="200"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="th1-QC-Bd3" id="pBO-T0-qZW"/>
+                                        </connections>
+                                    </tableView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="JiZ-Po-Sna" secondAttribute="trailing" id="1Kj-sr-EQC"/>
                                     <constraint firstItem="JiZ-Po-Sna" firstAttribute="leading" secondItem="kEw-lY-FBg" secondAttribute="leading" id="9wy-gi-D84"/>
                                     <constraint firstItem="yxS-Dj-7sv" firstAttribute="leading" secondItem="kEw-lY-FBg" secondAttribute="leading" constant="100" id="cCt-0G-Kcn"/>
+                                    <constraint firstItem="aDm-yP-9LX" firstAttribute="leading" secondItem="kEw-lY-FBg" secondAttribute="leading" id="gy8-ly-nzy"/>
                                     <constraint firstItem="Xeq-A4-wYA" firstAttribute="leading" secondItem="kEw-lY-FBg" secondAttribute="leading" id="hhp-i2-Qvc"/>
+                                    <constraint firstAttribute="trailing" secondItem="aDm-yP-9LX" secondAttribute="trailing" id="mBp-sA-Bob"/>
                                     <constraint firstAttribute="trailing" secondItem="yxS-Dj-7sv" secondAttribute="trailing" constant="100" id="ogX-FX-zDt"/>
+                                    <constraint firstItem="aDm-yP-9LX" firstAttribute="top" secondItem="kEw-lY-FBg" secondAttribute="top" id="pQs-vE-Rp8"/>
                                     <constraint firstAttribute="trailing" secondItem="Xeq-A4-wYA" secondAttribute="trailing" id="tKz-5h-a3h"/>
                                     <constraint firstAttribute="trailing" secondItem="ytW-my-yXm" secondAttribute="trailing" constant="10" id="wyM-mi-laK"/>
                                 </constraints>
@@ -97,8 +104,8 @@
                         <constraints>
                             <constraint firstItem="kEw-lY-FBg" firstAttribute="top" secondItem="PJX-A7-qdA" secondAttribute="bottom" id="VXs-k3-UVp"/>
                             <constraint firstItem="kEw-lY-FBg" firstAttribute="leading" secondItem="ex6-Pq-XiT" secondAttribute="leadingMargin" id="ieh-wF-KUi"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="kEw-lY-FBg" secondAttribute="trailing" id="nqF-D3-GE6"/>
-                            <constraint firstItem="zhQ-gD-GzN" firstAttribute="top" secondItem="kEw-lY-FBg" secondAttribute="bottom" id="yVg-Ej-fOn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kEw-lY-FBg" secondAttribute="trailing" constant="-16" id="nqF-D3-GE6"/>
+                            <constraint firstItem="zhQ-gD-GzN" firstAttribute="top" secondItem="kEw-lY-FBg" secondAttribute="bottom" constant="-16" id="yVg-Ej-fOn"/>
                         </constraints>
                     </view>
                 </viewController>

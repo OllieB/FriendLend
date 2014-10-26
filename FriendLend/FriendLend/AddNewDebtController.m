@@ -25,7 +25,7 @@
 {
     [super viewDidLoad];
     // Initialize table data
-    tableData = [NSArray arrayWithObjects:@"Death", @"Dead", @"Go to sleep", @"Tired", nil];
+    tableData = [NSArray arrayWithObjects:@"Ollie Brown", @"Pez Cuckow", @"Jimmy Wales", @"David Thorne", nil];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
