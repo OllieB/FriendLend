@@ -40,7 +40,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return section == 0 ? (self.selectedPersonName ? 2 : 0) : 0;
+    NSLog([NSString stringWithFormat:@"Rows in section %i is %i", section, (section == 0 ? (self.selectedPersonName ? 2 : 1) : 0)]);
+    return section == 0 ? (self.selectedPersonName ? 2 : 1) : 0;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -59,6 +60,9 @@
     float moneyOwed;
     NSString *imageName;
     
+    NSLog(@"Tried to get an index path");
+    
+    
     if(indexPath.row == 0 && self.selectedPersonName) {
         name = self.selectedPersonName;
         moneyOwed = self.selectedPrice;
@@ -73,7 +77,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
     }
     
     cell.textLabel.text = name;

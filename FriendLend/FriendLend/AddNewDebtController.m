@@ -68,7 +68,7 @@
         
         ListDebtsController *destination = segue.destinationViewController;
         
-        //NSLog([[NSString alloc] initWithFormat:@"Price: %@ IndexPath: %i", self.priceField.text, selectedRow]);
+        NSLog([[NSString alloc] initWithFormat:@"Price: %@ IndexPath: %i", self.priceField.text, selectedIndexPath.row]);
         
         UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:selectedIndexPath];
         NSString *personName = cell.textLabel.text;
