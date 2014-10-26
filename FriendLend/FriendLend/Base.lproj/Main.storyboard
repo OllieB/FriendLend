@@ -68,6 +68,7 @@
                                         </prototypes>
                                         <connections>
                                             <outlet property="dataSource" destination="th1-QC-Bd3" id="pBO-T0-qZW"/>
+                                            <outlet property="delegate" destination="th1-QC-Bd3" id="LnC-iR-Ywy"/>
                                         </connections>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxS-Dj-7sv">

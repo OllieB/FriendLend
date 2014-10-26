@@ -94,6 +94,8 @@
 {
     [super viewDidLoad];
     
+    [self.tableView setAllowsSelection:YES];
+    
     /////////////////////////////////////////////////////////////
     // setup Estimote beacon manager
     
