@@ -299,22 +299,13 @@
 - (void)setColorForProximity:(CLProximity)proximity {
     switch (proximity) {
         case CLProximityUnknown:
-            self.view.backgroundColor = [UIColor whiteColor];
-            break;
-            
         case CLProximityFar:
-            self.view.backgroundColor = [UIColor yellowColor];
-            break;
-            
         case CLProximityNear:
-            self.view.backgroundColor = [UIColor orangeColor];
-            break;
-            
         case CLProximityImmediate:
-            self.view.backgroundColor = [UIColor redColor];
+            self.view.backgroundColor = [UIColor grayColor];
             break;
-            
         default:
+            self.view.backgroundColor = [UIColor whiteColor];
             break;
     }
 }
