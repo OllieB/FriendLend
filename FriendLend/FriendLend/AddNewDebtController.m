@@ -60,6 +60,22 @@
     
 }
 
+// This will get called too before the view appears
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"ReturnToDebtFromAddSegue"]) {
+        
+        // Get destination view
+        SecondView *vc = [segue destinationViewController];
+        
+        // Get button tag number (or do whatever you need to do here, based on your object
+        NSInteger tagIndex = [(UIButton *)sender tag];
+        
+        // Pass the information to your destination view
+        [vc setSelectedButton:tagIndex];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
