@@ -80,9 +80,7 @@
     // create manager instance
     self.beaconManager = [[ESTBeaconManager alloc] init];
     self.beaconManager.delegate = self;
-    
-    //self.beaconManager.avoidUnknownStateBeacons = YES;
-    
+    self.beaconManager.preventUnknownUpdateCount = YES;
     
     //NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"];
     ESTBeaconRegion* region = [[ESTBeaconRegion alloc] initWithProximityUUID:ESTIMOTE_IOSBEACON_PROXIMITY_UUID
@@ -98,7 +96,7 @@
     NSLog(@"major %i minor %i", majorID,minorID);
     
     region.notifyOnEntry = true;
-    region.notifyOnExit = true;
+    //region.notifyOnExit = true;
     
     /*
      * Ask to be a beacon
@@ -211,8 +209,6 @@
                //
                
                 [self performSegueWithIdentifier:@"AddNewDebtSegue" sender:self];
-            /*performSegueWithIdentifier:(NSString *)identifier
-            sender:(id)sender*/
                 
                 break;
             }
@@ -263,7 +259,7 @@
     [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
 }
 
-- (void)beaconManager:(ESTBeaconManager *)manager didExitRegion:(ESTBeaconRegion *)region
+/*- (void)beaconManager:(ESTBeaconManager *)manager didExitRegion:(ESTBeaconRegion *)region
 {
     UILocalNotification *notification = [UILocalNotification new];
     notification.alertBody = @"The friend who owed you money has left";
@@ -272,7 +268,7 @@
     NSLog(@"Leave region");
     
     [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
-}
+}*/
 
 - (void)beaconManager:(ESTBeaconManager *)manager didDetermineState:(CLRegionState)state forRegion:(ESTBeaconRegion *)region {
     if (state == CLRegionStateInside) {
