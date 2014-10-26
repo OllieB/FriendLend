@@ -114,21 +114,8 @@
      */
     ESTBeacon *beacon = [self.beaconsArray objectAtIndex:indexPath.row];
     
-    if (self.scanType == ESTScanTypeBeacon)
-    {
-        cell.textLabel.text = [NSString stringWithFormat:@"Major: %@, Minor: %@", beacon.major, beacon.minor];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"Distance: %.2f", [beacon.distance floatValue]];
-    }
-    else
-    {
-        cell.textLabel.text = [NSString stringWithFormat:@"MacAddress: %@", beacon.macAddress];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"RSSI: %d", beacon.rssi];
-        
-        if([beacon.major unsignedShortValue] == 24216 && beacon.macAddress == nil)
-        {
-            NSLog(@"MAc: %@, %i", beacon.macAddress, [beacon.major unsignedShortValue]);
-        }
-    }
+    cell.textLabel.text = [NSString stringWithFormat:@"Major: %@, Minor: %@", beacon.major, beacon.minor];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Distance: %.2f", [beacon.distance floatValue]];
     cell.imageView.image = [UIImage imageNamed:@"beacon"];
     
     return cell;
@@ -145,7 +132,7 @@
 {
     ESTBeacon *selectedBeacon = [self.beaconsArray objectAtIndex:indexPath.row];
     
-    self.completion(selectedBeacon);
+    //self.completion(selectedBeacon);
 }
 
 
