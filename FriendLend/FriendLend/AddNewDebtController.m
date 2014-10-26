@@ -28,6 +28,22 @@
 
 @end
 
+@interface ESTTableViewCell : UITableViewCell
+
+@end
+@implementation ESTTableViewCell
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
+    if (self)
+    {
+        
+    }
+    return self;
+}
+@end
+
 @implementation AddNewDebtController
 {
     NSArray *tableData;
@@ -65,14 +81,14 @@
 {
     self.beaconsArray = beacons;
     
-    [self._tableview reloadData];
+    [self.tableView reloadData];
 }
 
 - (void)beaconManager:(ESTBeaconManager *)manager didDiscoverBeacons:(NSArray *)beacons inRegion:(ESTBeaconRegion *)region
 {
     self.beaconsArray = beacons;
     
-    [self._tableView reloadData];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
