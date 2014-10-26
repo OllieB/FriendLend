@@ -8,14 +8,57 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate ()
+#import "ESTBeaconManager.h"
 
+#include <sys/types.h>
+#include <sys/sysctl.h>
+#include <stdlib.h>
+
+@interface AppDelegate ()
+    @property (nonatomic, strong) ESTBeaconManager  *beaconManager;
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    /*
+     * Persmission to show Local Notification.
+     */
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    }
+    
+    // Do any additional setup after loading the view from its nib.
+    size_t size;
+    sysctlbyname("hw.machine", NULL, &size, NULL, 0);
+    char *machine = malloc(size);
+    sysctlbyname("hw.machine", machine, &size, NULL, 0);
+    NSString *platform = [NSString stringWithCString:machine encoding:NSUTF8StringEncoding];
+    NSLog(@"iPhone Device %@",platform);
+    
+    NSInteger minorID;
+    if ([platform isEqualToString:@"x86_64"]) {
+        minorID = 50;
+    }
+    else if ([platform isEqualToString:@"iPhone7,2"]) {
+        minorID = 40;
+    }
+    else if ([platform isEqualToString:@"iPhone6,1"]) {
+        minorID = 30;
+    } else {
+        minorID = arc4random_uniform(74);
+    }
+    
+    NSInteger majorID = 1337;
+    [self.beaconManager startAdvertisingWithProximityUUID:ESTIMOTE_IOSBEACON_PROXIMITY_UUID
+                                                    major:majorID
+                                                    minor:minorID
+                                               identifier:@"RegionIdentifier"];
+    
+    NSLog(@"UUID % major % minor %", ESTIMOTE_IOSBEACON_PROXIMITY_UUID,majorID,minorID);
+    
     // Override point for customization after application launch.
     return YES;
 }
