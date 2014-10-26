@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddNewDebtController : UIViewController
+@interface AddNewDebtController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end
