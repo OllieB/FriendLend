@@ -241,8 +241,8 @@
     NSString *name;
     NSString *imageName;
     if(minor == 30) {
-        name = @"Pez Cuckow";
-        imageName = @"Pez";
+        name = @"Patrick the Panda";
+        imageName = @"Panda";
     } else if(minor == 40) {
         name = @"Ollie Brown";
         imageName = @"Ollie";
@@ -253,7 +253,7 @@
     
     //cell.textLabel.text = [NSString stringWithFormat:@"Major: %@, Minor: %@", beacon.major, beacon.minor];
     cell.textLabel.text = name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Distance: %.2f", [beacon.distance floatValue]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Distance: %.2fm", [beacon.distance floatValue]];
     cell.imageView.image = [UIImage imageNamed:imageName];
 
     cell.selectionStyle = UITableViewCellSelectionStyleBlue;

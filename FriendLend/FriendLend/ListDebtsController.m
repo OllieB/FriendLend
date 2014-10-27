@@ -67,12 +67,12 @@
         name = self.selectedPersonName;
         moneyOwed = self.selectedPrice;
         
-        imageName = ([name isEqualToString:@"Pez Cuckow"]) ? @"Pez" : @"Ollie";
+        imageName = ([name isEqualToString:@"Patrick the Panda"]) ? @"Panda" : @"Ollie";
         
     } else {
-        name = @"Patrick the Panda";
+        name = @"Pez Cuckow";
         moneyOwed = 18.99;
-        imageName = @"Panda";
+        imageName = @"Pez";
     }
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
